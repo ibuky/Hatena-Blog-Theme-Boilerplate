@@ -1,14 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap');
+
 html,
 body {
+    font-size: 18px;
     font-family: $font-family-base;
     color: $text;
     background-color: $background;
     line-height: 1.6;
 }
+
 a {
     color: $link;
+    text-decoration: none;
     &:hover {
         color: $hover;
+        text-decoration: underline;
     }
     &.keyword {
         text-decoration: none;
@@ -16,9 +22,16 @@ a {
         color: $text;
     }
 }
-h1,h2,h3,h4,h5,h6 {
+.entry-content a {
+    color: #f0883e !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
     color: $text-header;
     line-height: 1.3;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    font-weight: 600;
     a {
         color: $text-header;
         text-decoration: none;
@@ -70,57 +83,6 @@ h1,h2,h3,h4,h5,h6 {
     }
 }
 
-/* 下記のスタイルを適用するとテーマを1カラムレイアウトにできます。
-利用するにはコメントアウトを解除してください。
-（2カラムレイアウトの場合はコメントアウト全体が不要です）
-
-#content-inner {
-    flex-direction: column;
-    align-items: center;
-}
-#wrapper {
-    @media #{$mq-sm} {
-        width: 100%;
-    }
-    @media #{$mq-md} {
-        max-width: 720px;
-    }
-}
-#box2 {
-    width: 100%;
-    @media #{$mq-sm} {
-        width: 100%;
-    }
-    @media #{$mq-md} {
-        width: 100%;
-    }
-}
-
-#box2-inner {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: flex-start;
-    @media #{$mq-sm} {
-        margin-left: -20px;
-        flex-direction: row;
-    }
-    @media #{$mq-md} {
-        margin-left: -30px;
-    }
-}
-.hatena-module {
-    width: 100%;
-    @media #{$mq-sm} {
-        width: 33.3333%;
-    }
-    @media #{$mq-md} {
-        padding-left: 30px;
-    }
-}
-
----- END 1カラム */
-
 /* ヘッダ */
 #blog-title {
     margin: 2em 0;
@@ -132,12 +94,13 @@ h1,h2,h3,h4,h5,h6 {
 }
 #title {
     margin: 0;
+    font-family: $font-family-serif;
     font-size: 1.5rem;
     @media #{$mq-md} {
         font-size: 1.7rem;
     }
     a {
-        color: $text;
+        color: $text-header;
     }
 }
 #blog-description {
@@ -146,28 +109,12 @@ h1,h2,h3,h4,h5,h6 {
     margin: 1em 0 0;
 }
 
-/* ヘッダ画像を設定したとき */
-.header-image-enable {
-    #blog-title {
-        margin: 0 0 2em;
-    }
-    #blog-title-inner {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-    #blog-title-content {
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-}
-
 /* タイトル下HTML */
 #top-editarea {
     margin-bottom: 1em;
 }
 
-/* パンくず（カテゴリー、記事ページで表示されます） */
+/* パンくず */
 .breadcrumb {
     font-size: .9rem;
 }
@@ -176,6 +123,9 @@ h1,h2,h3,h4,h5,h6 {
 .entry {
     position: relative;
     margin-bottom: 4em;
+    background-color: $background;
+    border: 1px solid $border;
+    border-radius: 8px;
 }
 .entry-header {
     padding-bottom: 1em;
@@ -196,6 +146,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 .entry-title {
     margin: 0 0 .3em;
+    font-family: $font-family-serif;
     font-size: 1.5rem;
     @media #{$mq-md} {
         font-size: 1.6rem;
@@ -216,7 +167,7 @@ h1,h2,h3,h4,h5,h6 {
     right: 0;
 }
 
-/* 記事内の書式 */
+/* 記事内の書式 — GitHub README style */
 .entry-content {
     img,
     video {
@@ -229,55 +180,84 @@ h1,h2,h3,h4,h5,h6 {
     h4,
     h5,
     h6 {
-        margin: 1em 0 0.8em 0;
+        margin-top: 4rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+        line-height: 1.25;
     }
     h1 {
-        font-size: 1.5rem;
-        @media #{$mq-md} {
-            font-size: 1.7rem;
-        }
+        font-size: 2em;
+        padding-bottom: 0.3em;
+        border-bottom: 1px solid $border;
     }
     h2 {
-        font-size: 1.4rem;
-        @media #{$mq-md} {
-            font-size: 1.5rem;
-        }
+        font-size: 1.5em;
+        padding-bottom: 0.3em;
+        border-bottom: 1px solid $border;
     }
     h3 {
-        font-size: 1.2rem;
-        @media #{$mq-md} {
-            font-size: 1.3rem;
-        }
+        font-size: 1.25em;
+        border-bottom: 1px dashed $border;
     }
     h4 {
-        font-size: 1.1rem;
+        font-size: 1em;
+        margin-bottom: 0.5rem;
     }
     h5 {
-        font-size: 1rem;
+        font-size: 0.875em;
     }
     h6 {
-        font-size: .9rem;
+        font-size: 0.85em;
+        color: $text-light;
     }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 16px;
+    }
+
+    strong {
+        font-weight: 600;
+    }
+
+    em {
+        font-style: italic;
+    }
+
+    del {
+        color: $text-light;
+    }
+
     ul,
     ol,
     dd {
-        margin: 0 0 1em 1.5em;
-        padding: 0;
+        margin-top: 0;
+        margin-bottom: 16px;
+        padding-left: 2em;
+    }
+    ul {
+        list-style-type: disc;
         li {
-            ul,ol {
+            margin-bottom: 4px;
+            ul, ol {
                 margin-bottom: 0;
             }
         }
     }
+    ol {
+        list-style-type: decimal;
+    }
+
+    /* GitHub style table */
     table {
         border-collapse: collapse;
         border-spacing: 0;
-        border-bottom: 1em;
-        margin-bottom: 1em;
+        border: 1px solid $border;
+        margin-bottom: 24px;
         width: 100%;
         overflow: auto;
         display: block;
-        font-size: .8rem;
+        font-size: .875rem;
         @media #{$mq-md} {
             font-size: .9rem;
         }
@@ -285,16 +265,34 @@ h1,h2,h3,h4,h5,h6 {
     table th,
     table td {
         border: 1px solid $border;
-        padding: 5px 10px;
+        padding: 6px 13px;
+        font-family: $font-family-serif;
     }
     table th {
         background: $bg-light;
+        font-weight: 600;
+    }
+    table tr {
+        background-color: $background;
+        border-top: 1px solid $border;
+    }
+    table tr:nth-child(2n) {
+        background-color: rgba(33, 38, 45, 0.3);
     }
 
+    /* Blockquote — GitHub style */
     blockquote {
-        border: 1px solid $border;
-        margin: 0 0 10px;
-        padding: 20px;
+        border: 1px solid $code-border;
+        border-left: 5px solid $link;
+        border-radius: 6px;
+        margin: 0 0 16px;
+        padding: 1em 1em 1em 2em;
+        color: $text-light;
+        background: $code-bg;
+        font-family: $font-family-serif;
+        &::before {
+            font-size: 2em;
+        }
         p:first-of-type {
             margin-top: 0;
         }
@@ -302,18 +300,23 @@ h1,h2,h3,h4,h5,h6 {
             margin-bottom: 0;
         }
     }
+
+    /* Code blocks — GitHub style */
     pre,
     code {
         font-family: $font-family-monospace;
+        font-size: 87.5%;
     }
     pre {
-        background: $bg-light;
-        border: none;
-        white-space: pre-wrap;
-        text-overflow: ellipsis;
-        line-height: 1.3;
-        font-size: .8rem;
-        padding: 10px;
+        background: $code-bg;
+        border: 1px solid $code-border;
+        border-radius: 6px;
+        white-space: pre;
+        line-height: 1.4;
+        padding: 16px;
+        overflow-y: auto;
+        max-height: 280px;
+        margin-bottom: 24px;
         & > code {
             margin: 0;
             padding: 0;
@@ -321,26 +324,88 @@ h1,h2,h3,h4,h5,h6 {
             border: none;
             background-color: transparent;
             font-family: $font-family-monospace;
+            font-size: inherit;
         }
     }
     code {
-        font-size: 90%;
-        margin: 0 2px;
-        padding: 0px 5px;
-        background-color: $bg-light;
-        border-radius: 3px;
+        padding: 0.2em 0.4em;
+        margin: 0;
+        font-size: 85%;
+        background-color: rgba(110, 118, 129, 0.4);
+        border-radius: 6px;
     }
+
+    /* Syntax highlighting classes */
+    .synComment {
+        color: $syn-comment;
+    }
+    .synKeyword {
+        color: $syn-keyword;
+    }
+    .synString {
+        color: $syn-string;
+    }
+    .synNumber {
+        color: $syn-number;
+    }
+    .synFunction {
+        color: $syn-function;
+    }
+    .synType {
+        color: $syn-type;
+    }
+    .synOperator {
+        color: $syn-operator;
+    }
+    .synStatement {
+        color: $syn-statement;
+    }
+    .synConstant {
+        color: $syn-constant;
+    }
+    .synIdentifier {
+        color: $text-header;
+    }
+    .synSpecial {
+        color: $text;
+    }
+
     hr {
-        width: 50%;
+        width: 100%;
         border: 0;
-        border: none;
         border-top: 1px solid $border;
-        margin: 2em auto;
+        margin: 24px 0;
     }
+
+    /* Table of Contents — GitHub style */
     .table-of-contents {
         padding: 1em 1em 1em 2em;
-        margin: 1em 0;
-        border: 1px solid $border;
+        margin-bottom: 24px;
+        border-top: 3px solid $link;
+        border-radius: 6px;
+        background: $bg-light;
+        font-size: .875rem;
+        h1, h2, h3, h4 {
+            margin-top: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        a {
+            color: #89b4fa !important;
+            &:hover {
+                color: #79b8ff !important;
+            }
+        }
+        ul {
+            padding-left: 1.5em;
+        }
+    }
+
+    .hatenablog-entry {
+        h1, h2, h3, h4 {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
     }
 }
 
@@ -385,7 +450,7 @@ h1,h2,h3,h4,h5,h6 {
     .hatena-id-icon {
         position: absolute;
         top: 10px;
-        left: 0;
+        left: -60px;
         width: 50px !important;
         height: 50px !important;
         border-radius: 3px;
@@ -396,7 +461,7 @@ h1,h2,h3,h4,h5,h6 {
     font-weight: bold;
 }
 .comment-content {
-    margin: 0 0 .4em 0;
+    margin: 0 0 .4em 0i;
     word-wrap: break-word;
     color: $text;
     font-size: .85rem;
@@ -416,21 +481,36 @@ h1,h2,h3,h4,h5,h6 {
     padding: .6em 1em;
     font-size: .85rem;
     border: 1px solid $border;
+    border-radius: 6px;
+    background: $bg-light;
+    color: $text;
+    cursor: pointer;
+    &:hover {
+        background: $btn-hover;
+    }
 }
 
 /* Pager */
-
 .pager {
     margin: 2em 0;
     display: flex;
     justify-content: space-between;
 }
 
-/* サイドバーモジュール */
+/* サイドバーモジュール — GitHub style */
+/* sidebar */
+aside,
+#box2 {
+    background-color: $background;
+}
 .hatena-module {
     box-sizing: border-box;
     margin-bottom: 3em;
+    margin-left: 1em;
     font-size: .85rem;
+    background-color: $background;
+    border: none;
+    border-radius: 8px;
     @media #{$mq-sm} {
         font-size: .9rem;
     }
@@ -439,13 +519,14 @@ h1,h2,h3,h4,h5,h6 {
     margin-bottom: .6em;
     padding-bottom: .2em;
     border-bottom: 1px solid $border;
+    font-family: $font-family-serif;
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 600;
     a {
-        color: $text;
+        color: $text-header;
         text-decoration: none;
         &:hover {
-            text-decoration: underline;
+            color: $link;
         }
     }
 }
@@ -473,21 +554,26 @@ h1,h2,h3,h4,h5,h6 {
     list-style: none;
     margin: 0;
     padding: 0;
-    li {
-        padding: .5em 0;
-        &:last-child {
-            padding-bottom: 0;
-        }
-        a {
-            text-decoration: none;
-            &:hover {
-                text-decoration: underline;
+        li {
+            padding: .5em 0;
+            border: none !important;
+            &:last-child {
+                padding-bottom: 0;
+            }
+            a {
+                text-decoration: none;
+                color: $text;
+                &:hover {
+    color: $link;
+                    text-decoration: underline;
+                }
             }
         }
-    }
     .urllist-category-link {
         font-size: .7rem;
         padding: .1em .3em;
+        background: $bg-light;
+        border-radius: 6px;
     }
     .urllist-date-link a {
         color: $text-light;
@@ -501,11 +587,12 @@ h1,h2,h3,h4,h5,h6 {
 .hatena-module-search-box {
     .search-form {
         border: 1px solid $border;
-        border-radius: 3px;
+        border-radius: 6px;
         width: 100%;
         box-sizing: border-box;
         display: flex;
         align-items: center;
+        background: $bg-light;
     }
     .search-module-input {
         flex: 1 0;
@@ -514,7 +601,6 @@ h1,h2,h3,h4,h5,h6 {
         background: none;
         border: none;
         outline: none;
-        height: 20px;
     }
     .search-module-button {
         width: 24px;
@@ -527,6 +613,7 @@ h1,h2,h3,h4,h5,h6 {
         color: transparent;
         overflow: hidden;
         opacity: .5;
+        filter: invert(1);
         cursor: pointer;
         &:hover {
             opacity: .85;
@@ -585,7 +672,6 @@ h1,h2,h3,h4,h5,h6 {
     }
 }
 
-
 /* footer */
 #footer {
     margin-top: 2em;
@@ -595,8 +681,96 @@ h1,h2,h3,h4,h5,h6 {
     color: $text-light;
     a {
         color: $text-light;
+        &:hover {
+            color: $link;
+        }
     }
     p {
         margin: .5em auto;
     }
+}
+
+/* 読者になるボタン — GitHub style */
+.blog-controlls-subscribe-btn,
+.entry-footer-subscribe a {
+    display: inline-block;
+    padding: 0.3em 1em;
+    font-size: .85rem;
+    border: 1px solid $border;
+    border-radius: 6px;
+    background: $bg-light;
+    color: $text;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover {
+        background: $btn-hover;
+    }
+}
+
+/* Social buttons */
+.social-buttons {
+    .social-button-item {
+        display: inline-block;
+        margin-right: 8px;
+    }
+}
+
+/* スクロールバー（ダーク・細め） */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: $bg-light;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb {
+    background: $text-light;
+    border-radius: 3px;
+    &:hover {
+        background: $text;
+    }
+}
+
+/* フッター */
+#footer,
+#footer-inner {
+    background-color: $background;
+    color: $text-light;
+}
+
+/* コメントボタン */
+a.leave-comment-title {
+    background-color: $bg-light !important;
+    color: $text !important;
+    border: 1px solid $border !important;
+    border-radius: 6px;
+    padding: 0.5em 1em;
+    display: inline-block;
+}
+
+/* 読者になるボタン（プロフィール） */
+.hatena-follow-button {
+    height: 1.5rem !important;
+    line-height: 1.5rem !important;
+}
+
+/* 検索インプット */
+.search-module-input {
+    height: 36px;
+}
+
+span[data-hatena-star]::part(star-button-container) {
+  filter: invert(1);
+}
+
+.btn-vertical > .count {
+  background: black !important;
+}
+
+.fb-share-button,
+.fb-share-button span,
+.fb-share-button iframe {
+  background-color: transparent !important;
+  background: none !important;
 }

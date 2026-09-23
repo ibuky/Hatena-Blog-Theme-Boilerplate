@@ -1,28 +1,45 @@
-// Variables
+// Variables — GitHub Dark Theme
 
 // Font
-$font-family-base: 'Helvetica Neue', 'Helvetica', 'Arial', 'Hiragino Kaku Gothic Pro', 'Meiryo', 'MS PGothic';
-$font-family-monospace: 'Monaco', 'Consolas', 'Courier New', Courier, monospace, sans-serif;
+$font-family-base: 'BIZ UDPGothic', -apple-system, BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif;
+$font-family-serif: 'BIZ UDPGothic';
+$font-family-monospace: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
 
-// Background color
-$background: #fff;
-$bg-light: #f5f5f5;
+// Background
+$background: #0d1117;
+$bg-light: #161b22;
 
-// text color
-$text: #454545;
-$text-light: #999;
-$text-header: #333;
+// Text
+$text: #c9d1d9;
+$text-light: #8b949e;
+$text-header: #f0f6fc;
 
-// link
-$link: #1487bd;
-$hover: darken($link, 10%);
+// Link
+$link: #f0883e;
+$hover: #79b8ff;
 
-// border
-$border: #ddd;
+// Border
+$border: #30363d;
+$border-subtle: #21262d;
 
-// button
-$btn: #fff;
-$btn-hover: #f5f5f5;
+// Button
+$btn: #21262d;
+$btn-hover: #30363d;
+
+// Code block
+$code-bg: #161b22;
+$code-border: #30363d;
+
+// Syntax highlighting (Catppuccin Mocha)
+$syn-comment: #a6adc8;
+$syn-keyword: #cba6f7;
+$syn-string: #a6e3a1;
+$syn-number: #fab387;
+$syn-function: #89b4fa;
+$syn-type: #94e2d5;
+$syn-operator: #cdd6f4;
+$syn-statement: #cba6f7;
+$syn-constant: #fab387;
 
 // Media Queries
 $mq-xs: "(max-width: 480px)";
