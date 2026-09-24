@@ -734,6 +734,9 @@ aside,
         background: $text;
     }
 }
+::-webkit-scrollbar-corner {
+    background: $bg-light;
+}
 
 /* フッター */
 #footer,
@@ -781,3 +784,4 @@ span[data-hatena-star]::part(star-button-container) {
   background-color: transparent !important;
   background: none !important;
 }
+
