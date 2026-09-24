@@ -47,13 +47,13 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 10px;
     padding-right: 10px;
     @media #{$mq-sm} {
-        width: 720px;
+        width: 700px;
         margin: auto;
         padding-left: 0;
         padding-right: 0;
     }
     @media #{$mq-md} {
-        width: 940px;
+        width: 1100px;
     }
 }
 
@@ -61,7 +61,7 @@ h1, h2, h3, h4, h5, h6 {
 #content-inner {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: none;
     @media #{$mq-sm} {
         flex-direction: row;
     }
@@ -71,7 +71,9 @@ h1, h2, h3, h4, h5, h6 {
         width: 480px;
     }
     @media #{$mq-md} {
-        width: 600px;
+        width: 750px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 #box2 {
@@ -79,7 +81,7 @@ h1, h2, h3, h4, h5, h6 {
         width: 200px;
     }
     @media #{$mq-md} {
-        width: 300px;
+        width: 240px;
     }
 }
 
@@ -123,8 +125,10 @@ h1, h2, h3, h4, h5, h6 {
 .entry {
     position: relative;
     margin-bottom: 4em;
+    margin-left: auto;
+    margin-right: auto;
     background-color: $background;
-    border: 1px solid $border;
+    border: none;
     border-radius: 8px;
 }
 .entry-header {
@@ -252,15 +256,13 @@ h1, h2, h3, h4, h5, h6 {
     table {
         border-collapse: collapse;
         border-spacing: 0;
-        border: 1px solid $border;
         margin-bottom: 24px;
-        width: 100%;
+        font-size: .8rem;
+        @media #{$mq-md} {
+            font-size: .85rem;
+        }
         overflow: auto;
         display: block;
-        font-size: .875rem;
-        @media #{$mq-md} {
-            font-size: .9rem;
-        }
     }
     table th,
     table td {
@@ -450,7 +452,7 @@ h1, h2, h3, h4, h5, h6 {
     .hatena-id-icon {
         position: absolute;
         top: 10px;
-        left: -60px;
+        left: 0;
         width: 50px !important;
         height: 50px !important;
         border-radius: 3px;
@@ -595,6 +597,7 @@ aside,
         background: $bg-light;
     }
     .search-module-input {
+        width: 100%;
         flex: 1 0;
         padding: 5px;
         color: $text;
@@ -739,6 +742,16 @@ aside,
     color: $text-light;
 }
 
+/* タグリンク */
+.entry-tag .entry-tag-link,
+.archive-entry-tag .archive-entry-tag-link {
+    background-color: $bg-light !important;
+    color: $text !important;
+    border: 1px solid $border !important;
+    border-radius: 6px;
+    padding: 0.2em 0.6em;
+}
+
 /* コメントボタン */
 a.leave-comment-title {
     background-color: $bg-light !important;
@@ -747,12 +760,6 @@ a.leave-comment-title {
     border-radius: 6px;
     padding: 0.5em 1em;
     display: inline-block;
-}
-
-/* 読者になるボタン（プロフィール） */
-.hatena-follow-button {
-    height: 1.5rem !important;
-    line-height: 1.5rem !important;
 }
 
 /* 検索インプット */
