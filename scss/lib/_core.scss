@@ -779,9 +779,16 @@ span[data-hatena-star]::part(star-button-container) {
 }
 
 .fb-share-button,
-.fb-share-button span,
+.fb-share-button span, 
 .fb-share-button iframe {
-  background-color: transparent !important;
-  background: none !important;
+    background-color: transparent !important;
+    background: none !important;
+}
+
+/* グローバルヘッダー・プロフィールカードのダーク化 */
+#globalheader,
+a.hatena-follow-button,
+iframe.embed-card {
+    filter: invert(1) hue-rotate(190deg) !important;
 }
 
