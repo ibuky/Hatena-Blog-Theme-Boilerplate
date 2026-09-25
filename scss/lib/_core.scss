@@ -789,8 +789,12 @@ span[data-hatena-star]::part(star-button-container) {
 #globalheader,
 a.hatena-follow-button,
 iframe.embed-card,
-div.social-button-item .hatena-bookmark-button,
-div.social-button-item .fb-share-button {
+div.social-buttons {
     filter: invert(1) hue-rotate(190deg) !important;
+}
+/* SNS ボタン（X, Bluesky）は除外 */
+div.social-buttons .entry-share-button-twitter,
+div.social-buttons .bluesky-button {
+    filter: none !important;
 }
 
