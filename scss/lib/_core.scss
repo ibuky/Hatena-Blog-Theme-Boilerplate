@@ -785,10 +785,11 @@ span[data-hatena-star]::part(star-button-container) {
     background: none !important;
 }
 
-/* グローバルヘッダー・プロフィールカードのダーク化 */
+/* グローバルヘッダー・プロフィールカード・SNSボタンのダーク化 */
 #globalheader,
 a.hatena-follow-button,
-iframe.embed-card {
+iframe.embed-card,
+div.social-buttons {
     filter: invert(1) hue-rotate(190deg) !important;
 }
 
