@@ -789,7 +789,8 @@ span[data-hatena-star]::part(star-button-container) {
 #globalheader,
 a.hatena-follow-button,
 iframe.embed-card,
-div.social-buttons {
+div.social-button-item .hatena-bookmark-button,
+div.social-button-item .fb-share-button {
     filter: invert(1) hue-rotate(190deg) !important;
 }
 
